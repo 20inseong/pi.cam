@@ -254,7 +254,7 @@ def writeDiary(): #일기 작성 함수
     wdDisplay = tkinter.Tk()
     wdDisplay.geometry('423x365')
     wdDisplay.iconbitmap('writing.ico')
-    wdDisplay.title('일기쓰기')
+    wdDisplay.title('일기쓰기(모두 작성해주셔야 합니다)')
     diary_image1 = Image.open('note.png')  # note.png를 배경으로
     diary_image2 = diary_image1.resize((423, 500), Image.ANTIALIAS)
     diary_image3 = ImageTk.PhotoImage(diary_image2, master=wdDisplay)
@@ -325,7 +325,7 @@ def playEmotion():  # 표정 인식 함수
 
         if cv2.waitKey(1) & 0xFF == ord('c'):  # c를 누르면 캡쳐, FaceRecognition.py가 있는 곳과 동일한 디렉토리에 캡쳐사진이 저장됩니다!
             ret, frame = camera.read()
-            cv2.imwrite("user" + str(name) + ".png", frame)  # 저장되는 캡쳐사진 파일명 예시) user1.png
+            cv2.imwrite("user" + str(name) + ".jpg", frame)  # 저장되는 캡쳐사진 파일명 예시) user1.png
             print("save image")
             name += 1
 
